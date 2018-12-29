@@ -1,7 +1,7 @@
 {
-  "main.css": "/react-sliding-puzzle/static/css/main.2cc4fada.chunk.css",
-  "main.js": "/react-sliding-puzzle/static/js/main.4c535e7f.chunk.js",
-  "main.js.map": "/react-sliding-puzzle/static/js/main.4c535e7f.chunk.js.map",
+  "main.css": "/react-sliding-puzzle/static/css/main.1b623b43.chunk.css",
+  "main.js": "/react-sliding-puzzle/static/js/main.50a56f2b.chunk.js",
+  "main.js.map": "/react-sliding-puzzle/static/js/main.50a56f2b.chunk.js.map",
   "static/js/1.5f62efa4.chunk.js": "/react-sliding-puzzle/static/js/1.5f62efa4.chunk.js",
   "static/js/1.5f62efa4.chunk.js.map": "/react-sliding-puzzle/static/js/1.5f62efa4.chunk.js.map",
   "runtime~main.js": "/react-sliding-puzzle/static/js/runtime~main.6030456b.js",
@@ -14,8 +14,8 @@
   "static/media/7.png": "/react-sliding-puzzle/static/media/7.c21865f6.png",
   "static/media/8.png": "/react-sliding-puzzle/static/media/8.d2a6f4b5.png",
   "static/media/2.png": "/react-sliding-puzzle/static/media/2.1ea015a4.png",
-  "static/css/main.2cc4fada.chunk.css.map": "/react-sliding-puzzle/static/css/main.2cc4fada.chunk.css.map",
+  "static/css/main.1b623b43.chunk.css.map": "/react-sliding-puzzle/static/css/main.1b623b43.chunk.css.map",
   "index.html": "/react-sliding-puzzle/index.html",
-  "precache-manifest.76ceaa35f401c229959f9c2ae66db1df.js": "/react-sliding-puzzle/precache-manifest.76ceaa35f401c229959f9c2ae66db1df.js",
+  "precache-manifest.47adde2d9bec18b71f3912327b2e940a.js": "/react-sliding-puzzle/precache-manifest.47adde2d9bec18b71f3912327b2e940a.js",
   "service-worker.js": "/react-sliding-puzzle/service-worker.js"
 }

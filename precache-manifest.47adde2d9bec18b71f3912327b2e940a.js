@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/react-sliding-puzzle/static/media/3.8d75d35e.png"
   },
   {
-    "revision": "4c535e7ffc24b85812cc",
-    "url": "/react-sliding-puzzle/static/css/main.2cc4fada.chunk.css"
+    "revision": "50a56f2b35d3b508dcda",
+    "url": "/react-sliding-puzzle/static/css/main.1b623b43.chunk.css"
   },
   {
     "revision": "5f62efa4f7233a45bf6c",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/react-sliding-puzzle/static/media/2.1ea015a4.png"
   },
   {
-    "revision": "4c535e7ffc24b85812cc",
-    "url": "/react-sliding-puzzle/static/js/main.4c535e7f.chunk.js"
+    "revision": "50a56f2b35d3b508dcda",
+    "url": "/react-sliding-puzzle/static/js/main.50a56f2b.chunk.js"
   },
   {
     "revision": "6a562d92519d4be5df338f75229de313",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/react-sliding-puzzle/static/media/8.d2a6f4b5.png"
   },
   {
-    "revision": "f30324d1e01c525f9e7cd10f4cfec60f",
+    "revision": "81681951925d38861d63386450dc47e5",
     "url": "/react-sliding-puzzle/index.html"
   }
 ];
