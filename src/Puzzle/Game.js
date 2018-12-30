@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Menu from './Menu';
 import Tile from './Tile';
+import { getPuzzleData, setPuzzleData } from '../Utils/LocalStorage';
 
 export default class Game extends Component {
 
@@ -91,7 +92,9 @@ export default class Game extends Component {
         7, 8, ''
       ]),
       win: false,
-      numMoves: 0
+      numMoves: 0,
+      puzzleId: this.props.match.params.id,
+      best: getPuzzleData(this.props.match.params.id).best
     };
   }
 
@@ -101,6 +104,7 @@ export default class Game extends Component {
     for (var i = 0; i < tiles.length - 1; i++) {
       if (tiles[i] !== i + 1) return false;
     }
+
 
     return true;
   }
@@ -145,6 +149,12 @@ export default class Game extends Component {
         win: this.checkBoard(),
         numMoves: this.state.numMoves + 1
       });
+      if (this.state.win) {
+        setPuzzleData(this.state.puzzleId, this.state.numMoves);
+        if (this.state.best == null || this.state.numMoves < this.state.best) {
+          this.setState({best: this.state.numMoves});
+        }
+      }
     };
 
     // return if they've already won
@@ -167,8 +177,9 @@ export default class Game extends Component {
   }
 
   render() {
-    return (
-      <div>
+    return [
+      <h1 key="title" className="title">Puzzle {this.state.puzzleId}</h1>,
+      <div key="game">
         <div id="game-board">
           {
             this.state.tiles.map((tile, position) => {
@@ -186,12 +197,13 @@ export default class Game extends Component {
           }
         </div>
         <h3 className="subtitle">Moves: {this.state.numMoves}</h3>
+        <h3 className="subtitle">Best: {this.state.best || '--'}</h3>
         <Menu
           winClass={this.state.win ? 'button win' : 'button'}
           status={this.state.win ? 'You win!' : 'Solve the puzzle.'}
           restart={this.restartGame}
         />
       </div>
-    )
+    ]
   }
 };

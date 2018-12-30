@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
+import { getPuzzleData } from './Utils/LocalStorage';
 
 const PuzzleListContainer = styled.div`
   display: flex;
@@ -29,19 +30,20 @@ const createButtonGrid = (numButtons) => {
   for (let i = 1; i <= numPuzzles; i++) {
     buttons.push(
       <Link to={`/puzzle/${i}`} key={i}>
-        <PuzzleButton className="button">{i}</PuzzleButton>
+        <PuzzleButton className={getPuzzleData(i).completed ? 'button complete' : 'button'}>{i}</PuzzleButton>
       </Link>
     )
   }
   return buttons;
 }
 
-const PuzzleList = () => (
-    <PuzzleListContainer>
-      <GridContainer>
-        {createButtonGrid()}
-      </GridContainer>
-    </PuzzleListContainer>
-);
+const PuzzleList = () => [
+  <h1 key="title" className="title">Orienteering<br /> Slide Puzzle</h1>,
+  <PuzzleListContainer key="puzzleListContainer">
+    <GridContainer>
+      {createButtonGrid()}
+    </GridContainer>
+  </PuzzleListContainer>
+];
 
 export default PuzzleList;

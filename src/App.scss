@@ -88,6 +88,10 @@
   }
 }
 
+.complete {
+  background: rgba($color: #00ff00, $alpha: 0.5)
+}
+
 @keyframes winner {
   0% {
     background: rgba(72, 172, 222, 0.75);

@@ -8,8 +8,6 @@ class App extends Component {
   render() {
     return (
       <div id="game-wrapper">
-        <h1 className="title">Orienteering<br/> Slide Puzzle</h1>
-
         <Router basename={process.env.PUBLIC_URL}>
           <div>
             <Route path="/" exact component={PuzzleList} />
