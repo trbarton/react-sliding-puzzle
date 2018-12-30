@@ -1,34 +1,12 @@
 import React, { Component } from 'react';
 
-import MapImg1 from './Images/map1.png';
-import MapImg2 from './Images/map2.png';
-import MapImg3 from './Images/map3.png';
-import MapImg4 from './Images/map4.png';
-
 export default class Tile extends Component {
 
   getBackgroundStyle = () => {
     const mapId = this.props.mapId.params.id;
     const style = {
-      backgroundImage: `url(${MapImg1})`,
+      backgroundImage: `url('../images/${mapId}.png')`,
       backgroundSize: '300px'
-    }
-
-    switch (mapId) {
-      case '1':
-        style.backgroundImage = `url(${MapImg1})`;
-        break;
-      case '2':
-        style.backgroundImage = `url(${MapImg2})`;
-        break;
-      case '3':
-        style.backgroundImage = `url(${MapImg3})`;
-        break;
-      case '4':
-        style.backgroundImage = `url(${MapImg4})`;
-        break;
-      default:
-        style.backgroundImage = `url(${MapImg1})`;
     }
 
     switch (this.props.status) {

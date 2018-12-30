@@ -10,7 +10,7 @@ class App extends Component {
       <div id="game-wrapper">
         <h1 className="title">Orienteering<br/> Slide Puzzle</h1>
 
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <div>
             <Route path="/" exact component={PuzzleList} />
             <Route path="/puzzle/:id?" component={Game} />
