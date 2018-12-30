@@ -80,12 +80,18 @@ export default class Game extends Component {
   getInitialState = () => {
     return {
       // initial state of game board
+      // tiles: [
+      //   1, 2, 3,
+      //   4, 5, 6,
+      //   7, 8, ''
+      // ],
       tiles: this.shuffle([
         1, 2, 3,
         4, 5, 6,
         7, 8, ''
       ]),
       win: false,
+      numMoves: 0
     };
   }
 
@@ -114,17 +120,16 @@ export default class Game extends Component {
 
     function animateTiles(i, move) {
       var directions = ['up', 'right', 'down', 'left'];
-      var moveToEl = document.querySelector('.tile:nth-child(' + (move + 1) + ')');
       const direction = directions[i];
       tileEl.classList.add('move-' + direction);
       // this is all a little hackish.
       // css/js are used together to create the illusion of moving blocks
       setTimeout(function () {
-        moveToEl.classList.add('highlight');
+        // moveToEl.classList.add('highlight');
         tileEl.classList.remove('move-' + direction);
         // time horribly linked with css transition
         setTimeout(function () {
-          moveToEl.classList.remove('highlight');
+          // moveToEl.classList.remove('highlight');
         }, 400);
       }, 200);
     }
@@ -137,7 +142,8 @@ export default class Game extends Component {
       this.setState({
         tiles: tiles,
         moves: moves,
-        win: this.checkBoard()
+        win: this.checkBoard(),
+        numMoves: this.state.numMoves + 1
       });
     };
 
@@ -166,11 +172,25 @@ export default class Game extends Component {
         <div id="game-board">
           {
             this.state.tiles.map((tile, position) => {
-              return (<Tile status={tile} pos={position} tileClick={this.tileClick} />)
+              return (
+                <Tile
+                  status={tile}
+                  key={tile}
+                  pos={position}
+                  tileClick={this.tileClick}
+                  won={this.state.win}
+                  mapId={this.props.match}
+                />
+              )
             })
           }
         </div>
-        <Menu winClass={this.state.win ? 'button win' : 'button'} status={this.state.win ? 'You win!' : 'Solve the puzzle.'} restart={this.restartGame} />
+        <h3 className="subtitle">Moves: {this.state.numMoves}</h3>
+        <Menu
+          winClass={this.state.win ? 'button win' : 'button'}
+          status={this.state.win ? 'You win!' : 'Solve the puzzle.'}
+          restart={this.restartGame}
+        />
       </div>
     )
   }

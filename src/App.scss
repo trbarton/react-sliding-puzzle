@@ -5,7 +5,8 @@
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
 }
 
-#game-board, #game-board * {
+#game-board,
+#game-board * {
   box-sizing: border-box;
 }
 
@@ -20,7 +21,6 @@
 
 .tile,
 .button {
-  // get rid of highlighting
   user-select: none;
   -webkit-touch-callout: none;
 }
@@ -31,11 +31,12 @@
   float: left;
   line-height: 100px;
   font-size: 50px;
-  background: #fff;
+
+  /* background: #fff; */
   &:hover:not(:empty) {
-      cursor: pointer;
-      transition: transform 0.2s, background 0.2s;
-      background: #eee;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    background: #eee;
   }
 }
 
@@ -48,24 +49,26 @@
 .move-right,
 .move-down,
 .move-left {
-  background: #fdd !important;
+  background: rgba(72, 172, 222, 0.75) !important;
 }
 
 .highlight {
   background: #fff;
-  // animation time horribly linked to JavaScript setTimeout
   animation: highlight 0.4s;
 }
 
 .move-up {
   transform: translateY(-100px);
 }
+
 .move-right {
   transform: translateX(100px);
 }
+
 .move-down {
   transform: translateY(100px);
 }
+
 .move-left {
   transform: translateX(-100px);
 }
@@ -75,16 +78,36 @@
   padding: 4px 10px;
   color: black;
   border: 2px solid black;
-  &:hover { cursor: pointer; }
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  font-size: 16px;
+  outline: none;
+  background: #fff;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 @keyframes winner {
-  0%   { background: #fdd; }
-  50%  { background: #fff; }
-  100% { background: #fdd; }
+  0% {
+    background: rgba(72, 172, 222, 0.75);
+  }
+
+  50% {
+    background: rgba(72, 172, 222, 0.5);
+  }
+
+  100% {
+    background: rgba(72, 172, 222, 0.75);
+  }
 }
 
 @keyframes highlight {
-  0%   { background: #fdd; }
-  100% { background: #fff; }
+  0% {
+    background: rgba(72, 172, 222, 0.5);
+  }
+
+  100% {
+    background: rgba(72, 172, 222, 0.8);
+  }
 }
