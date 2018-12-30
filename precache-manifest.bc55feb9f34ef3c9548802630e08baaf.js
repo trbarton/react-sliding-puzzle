@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/react-sliding-puzzle/static/js/runtime~main.6030456b.js"
   },
   {
-    "revision": "356b4a39f242be3c5a52",
-    "url": "/react-sliding-puzzle/static/js/main.356b4a39.chunk.js"
+    "revision": "81744858bfa843d65a1f",
+    "url": "/react-sliding-puzzle/static/js/main.81744858.chunk.js"
   },
   {
     "revision": "c9c69a0819e9d8f97194",
     "url": "/react-sliding-puzzle/static/js/1.c9c69a08.chunk.js"
   },
   {
-    "revision": "356b4a39f242be3c5a52",
-    "url": "/react-sliding-puzzle/static/css/main.f851e6fd.chunk.css"
+    "revision": "81744858bfa843d65a1f",
+    "url": "/react-sliding-puzzle/static/css/main.613a7c9d.chunk.css"
   },
   {
-    "revision": "96a10db714fd47211ee237cf08915d82",
+    "revision": "cc0dce552f8684eae91b1e5bd483c77e",
     "url": "/react-sliding-puzzle/index.html"
   }
 ];
