@@ -1,7 +1,7 @@
 {
   "main.css": "/react-sliding-puzzle/static/css/main.ca277d4f.chunk.css",
-  "main.js": "/react-sliding-puzzle/static/js/main.46afa87e.chunk.js",
-  "main.js.map": "/react-sliding-puzzle/static/js/main.46afa87e.chunk.js.map",
+  "main.js": "/react-sliding-puzzle/static/js/main.51ee6a0e.chunk.js",
+  "main.js.map": "/react-sliding-puzzle/static/js/main.51ee6a0e.chunk.js.map",
   "static/js/1.8124b512.chunk.js": "/react-sliding-puzzle/static/js/1.8124b512.chunk.js",
   "static/js/1.8124b512.chunk.js.map": "/react-sliding-puzzle/static/js/1.8124b512.chunk.js.map",
   "runtime~main.js": "/react-sliding-puzzle/static/js/runtime~main.6030456b.js",
@@ -12,6 +12,6 @@
   "static/media/map2.png": "/react-sliding-puzzle/static/media/map2.1abbc9e3.png",
   "static/css/main.ca277d4f.chunk.css.map": "/react-sliding-puzzle/static/css/main.ca277d4f.chunk.css.map",
   "index.html": "/react-sliding-puzzle/index.html",
-  "precache-manifest.ce4004f6bce0745d2f379c2f6063ed6f.js": "/react-sliding-puzzle/precache-manifest.ce4004f6bce0745d2f379c2f6063ed6f.js",
+  "precache-manifest.1b801448a92bd727d58890e7fdb875f2.js": "/react-sliding-puzzle/precache-manifest.1b801448a92bd727d58890e7fdb875f2.js",
   "service-worker.js": "/react-sliding-puzzle/service-worker.js"
 }
