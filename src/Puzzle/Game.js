@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import Menu from './Menu';
 import Tile from './Tile';
 import { getPuzzleData, setPuzzleData } from '../Utils/LocalStorage';
+import styled from 'styled-components';
+import WinForm from '../WinForm/WinForm';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  width: 400px;
+`;
 
 export default class Game extends Component {
 
@@ -152,7 +163,7 @@ export default class Game extends Component {
       if (this.state.win) {
         setPuzzleData(this.state.puzzleId, this.state.numMoves);
         if (this.state.best == null || this.state.numMoves < this.state.best) {
-          this.setState({best: this.state.numMoves});
+          this.setState({ best: this.state.numMoves });
         }
       }
     };
@@ -176,34 +187,42 @@ export default class Game extends Component {
     this.setState(this.getInitialState());
   }
 
+
   render() {
-    return [
-      <h1 key="title" className="title">Puzzle {this.state.puzzleId}</h1>,
-      <div key="game">
-        <div id="game-board">
-          {
-            this.state.tiles.map((tile, position) => {
-              return (
-                <Tile
-                  status={tile}
-                  key={tile}
-                  pos={position}
-                  tileClick={this.tileClick}
-                  won={this.state.win}
-                  mapId={this.props.match}
-                />
-              )
-            })
-          }
+
+    let view;
+
+    if (!this.state.win) {
+      view = <Container>
+        <h2 key="title" className="title">Complete the puzzle.</h2>
+        <div key="game">
+          <div id="game-board">
+            {
+              this.state.tiles.map((tile, position) => {
+                return (
+                  <Tile
+                    status={tile}
+                    key={tile}
+                    pos={position}
+                    tileClick={this.tileClick}
+                    won={this.state.win}
+                    mapId={this.props.match}
+                  />
+                )
+              })
+            }
+          </div>
+          <h3 className="subtitle">Moves: {this.state.numMoves}</h3>
         </div>
-        <h3 className="subtitle">Moves: {this.state.numMoves}</h3>
-        <h3 className="subtitle">Best: {this.state.best || '--'}</h3>
-        <Menu
-          winClass={this.state.win ? 'button win' : 'button'}
-          status={this.state.win ? 'You win!' : 'Solve the puzzle.'}
-          restart={this.restartGame}
-        />
-      </div>
-    ]
+      </Container>;
+    } else {
+      view = <WinForm></WinForm>;
+    }
+
+    return(
+    <div>
+      { view }
+    </div>
+    )
   }
 };
